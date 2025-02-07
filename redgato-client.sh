@@ -16,7 +16,7 @@ fi
 
 echo "$IP and $PORT"
 
-read -p "* Do you want to send any test file? (Y/N) " yn
+read -p "* Do you want to send any test files? (Y/N) " yn
 
 if [ $yn == "Y" ]; then
 
@@ -31,5 +31,7 @@ if [ $yn == "Y" ]; then
 elif [ $yn == "N" ]; then
 
 	echo "Understood."
+ 	echo "Closing program."
+  	exit 0
 fi
 
