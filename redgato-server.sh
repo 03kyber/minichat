@@ -19,7 +19,15 @@ fi
 IPLIST=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*')
 IP=$(echo $IPLIST | cut -d " " -f 4)
 
+#get date in YYYYMMDD-HHMMSS
+YYYY=$(date +%Y)
+MM=$(date +%m)
+DD=$(date +%d)
+HH=$(date +%H)
+MM=$(date +%M)
+SS=$(date +%S)
+#listen to port
 echo "Server's IP is: $IP"
 echo "Listening to $1"
-nc -l -p $1
+nc -l -p $1 >/$HOME/redgato-files/$YYYY$MM$DD-$HH$MM$SS-file.txt
 
