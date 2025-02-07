@@ -1,7 +1,6 @@
 #!/bin/bash
 clear
 #check folder
-
 if [ -d "$HOME/redgato-files" ]; then
 
 	echo "* Folder already exists, cleaning..."
@@ -21,7 +20,7 @@ IP=$(echo $IPLIST | cut -d " " -f 4)
 
 #get date in YYYYMMDD-HHMMSS
 YYYY=$(date +%Y)
-MM=$(date +%m)
+mm=$(date +%m)
 DD=$(date +%d)
 HH=$(date +%H)
 MM=$(date +%M)
@@ -29,5 +28,5 @@ SS=$(date +%S)
 #listen to port
 echo "Server's IP is: $IP"
 echo "Listening to $1"
-nc -l -p $1 >/$HOME/redgato-files/$YYYY$MM$DD-$HH$MM$SS-file.txt
+nc -l -s $IP -p $1 >/$HOME/redgato-files/$YYYY$mm$DD-$HH$MM$SS-file.txt
 
